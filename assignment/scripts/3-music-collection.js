@@ -89,7 +89,7 @@ let collection = [];
         collection.push(album);
         // return the newly created album
         return album;
-    }
+    } // end addToCollection
 // add 6 albums to the collection array
 console.log(addToCollection('Live Dead', 'Grateful Dead', 1969));
 console.log(addToCollection('Loaded', 'Velvet Underground', 1970));
@@ -105,13 +105,27 @@ console.log('Record collection is now:', collection);
 function showCollection(array){
     // show number of items in the array
     console.log(array.length);
-    // loop over array contents 
+    // loop over albums in the array and show properties of each album
     for(album of array){
-        return `${album.title} by ${album.artist}, published in ${album.yearPublished}`;
+        console.log(`${album.Title} by ${album.Artist}, published in ${album.Year}.`);
     }
+    // return contents of array
+    return array;
 }
+// test showCollection function
 console.log(showCollection(collection));
 
-
-
+// create function to take in artist 
+function findByArtist(artist){
+    // make empty array for matching artists
+    let array = [];
+    // loop to find matching artists
+    for(album of collection){
+        if(artist === album.Artist ){
+            array.push(album);
+        }
+    } return array;
+}
+// test findByArtist
+console.log(findByArtist('Grateful Dead'));
 
