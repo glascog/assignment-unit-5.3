@@ -123,9 +123,10 @@ function findByArtist(artist){
     for(album of collection){
         if(artist === album.Artist ){
             array.push(album);
-        }
+        } 
     } return array;
 }
 // test findByArtist
 console.log(findByArtist('Grateful Dead'));
+console.log(findByArtist('Bob Dylan'));
 
